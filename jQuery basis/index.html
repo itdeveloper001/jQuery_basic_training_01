@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Workshop</title>
+    <!-- cdn jquery link: -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    -->
+
+    <!-- jquery links -->
+    <script src="js/jquery.js"></script>
+     <!-- elevate zoom links -->
+    <script src="js/elevate_zoom.js"></script>
+
+
+    <style>
+        #box{
+            width:300px;
+            height: 300px;
+            border:1px solid red;
+            display: none;
+            background:orange;
+        }
+    </style>
+
+</head>
+<body>
+      <!-- input value for jquery -->
+      <input type="text" id="txtname" placeholder="enter a name">
+      
+      <!-- button event handling -->
+      <input type="button" id="btnclick" value="get value">
+      <input type="button" id="btnshow"  value="show">
+      <input type="button" id="btnhide"  value="hide">
+
+     <br><br>
+    
+      <!-- hide/show & fade etc -->
+      <div id="box">
+      <h1>show box</h1>
+      </div>
+    
+      <!-- image using for elevatezomm -->
+      <img src="images/03.jpeg" id="img_01" style="width:200px; height: 200px;" data-zoom-image="images/03.jpeg" alt="">
+
+    <script>
+        
+    
+        //starting jQuery syntax
+         $(document).ready(function(){
+
+        // input value get   
+           $('#btnclick').click(function(){
+               var name = $("#txtname").val();
+                alert('Your Name is : ' + name);
+           });
+        
+        // Mouse Event
+        //specfic:
+           $("#box").mouseover(function(){
+                $(this).css('background','red');
+           }),
+       
+         //Effect in jQuery Fade 
+        $("#btnshow").click(function(){
+            $("#box").toggle(function(){
+              //  $(this).fadeIn();
+               // $(this).fadeIn('slow');
+                $(this).fadeIn(10000,function(){
+                    alert('ok');
+                });
+            });
+
+        // Hide & Show in jQuery Event   
+           $("#box").hide();
+           $("#box").toggle();
+           $("#box").slideToggle();
+
+        })  
+
+        // image zoom script of elevatezoom.js
+        $("#img_01").elevateZoom({
+            zoomType  : "lens",
+            lensShape : "round",
+            lensSize  : 200
+            });      
+
+       });
+
+    </script>
+
+</body>
+</html>
