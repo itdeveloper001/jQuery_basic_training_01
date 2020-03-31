@@ -9,17 +9,17 @@ https://jquery.com/download/
 
 
 # Agenda:
-Syntax Selector,Event,Function
+Syntax Selector, Event, Function
 # Event 
 Mouse,
 Keyboard,
 Button,
-Input, 
+Input
 
 # Effect
 Fade, 
 Slide,
-Callback function,
+Callback,
 Filter,
 Ajax,
 Scrolling
